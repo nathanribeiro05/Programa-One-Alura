@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function mostra(frase) {
+
+    document.write(frase);
+    document.write("<br><br>");
+  }
+
+  function calculaPontos(vitoria, empate) {
+
+    return vitoria * 3 + empate;
+  }
+
+  var quantVitorias = parseInt(prompt("Informe a quantidade de vitórias."));
+  var quantEmpates = parseInt(prompt("Informe a quantidade de empates"));
+  var pontos = calculaPontos(quantVitorias, quantEmpates);
+
+  //parseInt() converte um valor de número que está em string para int.
+  //Acima pode-se observar a conversão dos valores em string recebidos pelo prompt para int.
+  
+
+  mostra("O somatório de pontos de seu time é: " + pontos);
+
+  if(pontos > 28) {
+    mostra("Seu time está melhor que ano passado.");
+  } else if(pontos < 28) {
+    mostra("Seu time está pior que ano passado");
+  } else {
+    mostra("Seu time está igual ano passado.");
+  }
+
+</script>

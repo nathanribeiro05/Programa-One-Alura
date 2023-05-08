@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function mostra(frase) {
+
+    document.write(frase);
+    document.write("<br><br>");
+  }
+
+  var totalPessoas = parseInt(prompt("Informe a quantidade de pessoas: "));
+
+  var contador = 1;
+  var totalIdades = 0;
+  while (contador <= totalPessoas) {
+
+  	var idade = parseInt(prompt("Informe a idade da pessoa: "));
+  	totalIdades = totalIdades + idade;
+  	contador++;
+
+  }
+
+  mostra("A média das idades é: " + (totalIdades / totalPessoas));
+
+</script>

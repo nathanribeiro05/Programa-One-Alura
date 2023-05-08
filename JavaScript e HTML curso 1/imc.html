@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function mostra(frase) {
+
+    document.write(frase);
+    document.write("<br><br>");
+  }
+
+  function calculaImc(peso, altura) {
+
+    return peso / (altura * altura);
+  }
+
+  var nome = prompt("Informe seu nome.")
+  var pesoInformado = prompt(nome + ", Informe seu peso.");
+  var alturaInformada = prompt(nome + ", Informe sua altura.");
+  var imc = calculaImc(pesoInformado, alturaInformada);
+
+  //prompt(); é uma função do JS que pede informação para o usuário através de uma caixa pop up.
+  //Todas as informações recebidas no prompt(); serão processadas em forma de string, mesmo quando números forem digitados.
+  //Ex: se o valor 10 for inserido numa caisa de prompt();, o valor guardado será "10".
+
+  mostra(nome + ", o seu IMC calculado é: " + imc);
+
+  if (imc < 18.5) {
+    mostra("Seu IMC está abaixo do ideal.")
+  } else if (imc > 35) {
+    mostra("Seu IMC está acima do ideal.")
+  } else {
+    mostra("Seu IMC está ideal.")
+  }
+
+
+</script>

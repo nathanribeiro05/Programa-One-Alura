@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com meu segredo</button>
+
+<script>
+    var segredo = Math.round(Math.random() * 10);
+    console.log(segredo);
+
+    var input = document.querySelector("input"); //document.querySelector(); chama uma variável do html para o JS.
+    input.focus(); //Já carrega a página com a caixa pronta pra escrever, sem precisar clicar.
+
+    function verifica() {
+
+        if(input.value == segredo) { //input.value pega o valor inserido em input (nesse caso compara com a variaável segredo.)
+
+        	alert("Você ACERTOU!");
+        	document.write("FIM!");
+
+        } else {
+
+        	alert("Você ERROU!!!!!!!!");
+        }
+
+        input.value = ""; //Após o teste, limpa a caixa do input automaticamente.
+        input.focus(); //Após o teste, deixa a caixa pronta pra escrever automaticamente sem precisar clicar.
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica; //onclick guarda a função "verifica", assim ela só é executada ao clicar no botão.
+                               //A função é chamada sem ().
+
+</script>

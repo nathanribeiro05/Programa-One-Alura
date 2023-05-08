@@ -1,0 +1,76 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com meu segredo</button>
+
+<script>
+
+    function sorteia() {
+
+        return Math.round(Math.random() * 10);
+    }
+
+    function sorteiaNumeros(quantidade) {
+
+        var segredos = [];
+        var numero = 1;
+
+        while (numero <= quantidade) {
+
+            var numeroAleatorio = sorteia();
+            var achou = false;
+
+            if(numeroAleatorio !== 0) {
+                for (var posicao = 0; posicao < segredos.length; posicao++) {
+
+                    if(segredos[posicao] == numeroAleatorio) {
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if (achou == false){
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                }
+            }
+        }
+
+        return segredos;
+    }
+
+    var segredos = sorteiaNumeros(5);
+    console.log(segredos);
+    
+    var input = document.querySelector("input"); //document.querySelector(); chama uma variável do html para o JS.
+    input.focus(); //Já carrega a página com a caixa pronta pra escrever, sem precisar clicar.
+
+    function verifica() {
+
+        var achou = false;
+
+        for(var posicao = 0; posicao < segredos.length; posicao++) {
+        if(input.value == segredos[posicao]) { //input.value pega o valor inserido em input (nesse caso compara com a variável segredo.)
+
+        	alert("Você ACERTOU!");
+            achou = true;
+        	break;
+
+            }
+
+        } if(achou == false) {
+
+        	alert("Você ERROU!!!!!!!!");
+        }
+
+        input.value = ""; //Após o teste, limpa a caixa do input automaticamente.
+        input.focus(); //Após o teste, deixa a caixa pronta pra escrever automaticamente sem precisar clicar.
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica; //onclick guarda a função "verifica", assim ela só é executada ao clicar no botão.
+                               //A função é chamada sem ().
+
+</script>

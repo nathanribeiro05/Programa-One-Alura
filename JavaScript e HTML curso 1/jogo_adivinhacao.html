@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function mostra(frase) {
+
+    document.write(frase);
+    document.write("<br><br>");
+  }
+
+  var numeroPensado = Math.round(Math.random() * 10);
+  console.log(numeroPensado); //Exibe o número gerado no console.
+  
+  var contador = 1;
+  while(contador <= 3) {
+
+  var chute = parseInt(prompt("Digite seu chute: "));
+
+  if(chute == numeroPensado) {
+
+  	mostra("Miseravi, acertou!!");
+  	break; // Caso acerte, não porque continuar no loop. O break interrompe o loop.
+
+  } else {
+
+  	mostra("Se lascô, errou o chute!!");
+  }
+
+contador++;
+
+}
+
+</script>  
